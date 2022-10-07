@@ -64,7 +64,7 @@ alumno3.presentar()
 
 
 
-class Alumno {
+/**class Alumno {
 
     constructor( alumno, horas ) {
         this.alumno = alumno
@@ -83,6 +83,6 @@ class Horas {
     }
 }
 
-let horario1 = new Horario( 6, 300 );
-let alumno1 = new Alumno1('Juan', impuesto1);
+let horario1 = new Horario1( 6, 300 );
+let alumno1 = new Alumno1('Juan', horario1);
 console.log( alumno1.calcularHoras() );
