@@ -20,7 +20,42 @@ while (numero !=0){ // condicion que se cumple hasta que el numero ingresado sea
  
 }
 
+let valorhora = 300;
 
+class solicitudEstudiante {
+    constructor (name, sala, telefono, horas) {
+        this.name = name;
+        this.sala = sala;
+        this.telefono = telefono;
+        this.horas = horas;
+    }
+
+    imprimir() {
+        alert(`El/La alumno/a ${this.name} de ${this.sala} años ha solicitado una vacante para dicha sala, con una cuota mensual de ${this.horas * valorhora}. Su acudiente puede ser contactado en el ${this.telefono}`);
+        return `El/La alumno/a ${this.name} de ${this.sala} años ha solicitado una vacante para dicha sala, con una cuota mensual de ${this.horas * valorhora}. Su acudiente puede ser contactado en el ${this.telefono}`
+    }
+}
+
+const solicitarDatos = () => {
+    let masestudiantes = 1;
+    while (masestudiantes !=0) { // condicion que se cumple hasta que el numero ingresado sea cero
+        let name = prompt('Cual es el nombre del niño/a?');
+        let sala = prompt('Edad del niño');
+        let telefono= prompt('Ingrese telefono de contacto');
+        let horas = prompt('Cuantas horas asistirá el niño al jardín? o ingresa 0 para salir');
+        masestudiantes = prompt('Vas a ingresar mas estudiantes? 0 para NO');
+        if (isNaN(horas)) {
+            alert("El valor ingresado no es un numero")
+            horas = 0;
+        } else {
+            const alumno = new solicitudEstudiante(name, sala, telefono, horas);
+            console.log(alumno);
+            console.log(alumno.imprimir());
+        };
+    };
+};
+
+solicitarDatos();
 
 
 
@@ -33,7 +68,7 @@ function solicitud(apellido,telefono,alumno){
 function Alumno(nombre,edad){
     this.nombre = nombre
     this.edad = edad
-
+    
 
     this.presentar = function(){
         console.log(`Hola soy ${this.nombre} y tengo ${this.edad} años`)
@@ -60,29 +95,3 @@ console.log(solicitud3)
 console.log(alumno3)
 alumno3.presentar()
 
-
-
-
-
-/**class Alumno {
-
-    constructor( alumno, horas ) {
-        this.alumno = alumno
-        this.horas = horas
-    }
-
-    calcularHoras(){
-        return (`El valor total por la cantidad de horas a pagar es: ${ (this.cantidad_horas) * this.Valor_hora }`);
-    }
-}
-
-class Horas {
-    constructor( cantidad_horas, Valor_hora ){
-        this.cantidad_horas = cantidad_horas;
-        this.Valor_hora = Valor_hora;
-    }
-}
-
-let horario1 = new Horario1( 6, 300 );
-let alumno1 = new Alumno1('Juan', horario1);
-console.log( alumno1.calcularHoras() );
