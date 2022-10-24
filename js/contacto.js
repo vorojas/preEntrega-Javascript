@@ -59,39 +59,24 @@ solicitarDatos();
 
 
 
-function solicitud(apellido,telefono,alumno){
-    this.apellido = apellido;
-    this.telefono = telefono;
-    this.alumno = alumno;
+function CumpleañosySala () {
+    let hoy = new date();
+    document.getElementById("cumple").max = hoy.getFullYear() + "-" +
+    (hoy.getMonth () +1) + "-" + (hoy.getDate() < 10 ? ("0" + (hoy.getDate()-1)) : (hoy.getDate()-1));
+};
+function calculadorDeDias() {
+    let hoy = new Date();
+    let cumple = new Date(document.getElementById("cumple").value);
+    let edad = hoy.getFullYear() - cumple.getFullYear();
+    let proximoCumple = new Date(hoy.getFullYear(), cumple.getMonth(), cumple.getDate());
+    if (hoy > proximoCumple.setFullYear(hoy.getFullYear() + 1));
 }
-
-function Alumno(nombre,edad){
-    this.nombre = nombre
-    this.edad = edad
-    
-
-    this.presentar = function(){
-        console.log(`Hola soy ${this.nombre} y tengo ${this.edad} años`)
-    }
+let unDia = 24 * 60 * 60 * 1000;
+let faltanTantosDias = Math.ceil((proximoCumple.getTime() - hoy.getTime()) / (unDia));
+if (faltanTantosDias==364){
+    document.getElementById("resultado").innerText = "¡Te estas inscribiendo el dia de tu cumpleaños!";
+} else if (faltanTantosDias && edad < 150) {
+    document.getElementById("resultado").innerText = "En $(faltanTantosDias) pasaras a la proxima sala";
+} else {
+    document.getElementById("resultado").innerText = "Ingresa una fecha valida";
 }
-var alumno1 = new Alumno('Florencia',3)
-var solicitud1 = new solicitud('Lopez','3513997507', alumno1)
-
-var alumno2 = new Alumno('Nicolas',5)
-var solicitud2 = new solicitud('Rojas','3514031099', alumno2)
-
-var alumno3 = new Alumno('Bautista',2)
-var solicitud3 = new solicitud('Lovero','3516151806', alumno3)
-
-
-
-console.log(solicitud1)
-console.log(alumno1)
-alumno1.presentar()
-console.log(solicitud2)
-console.log(alumno2)
-alumno2.presentar()
-console.log(solicitud3)
-console.log(alumno3)
-alumno3.presentar()
-
