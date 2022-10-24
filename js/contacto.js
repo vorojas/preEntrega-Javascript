@@ -1,61 +1,23 @@
-let name = prompt('Cual es el nombre del niño/a?');
+//const solicitarDatos = () => {
+    //let masestudiantes = 1;
+    //while (masestudiantes !=0) { // condicion que se cumple hasta que el numero ingresado sea cero
+        //let name = prompt('Cual es el nombre del niño/a?');
+        //let sala = prompt('Edad del niño');
+        //let telefono= prompt('Ingrese telefono de contacto');
+        //let horas = prompt('Cuantas horas asistirá el niño al jardín? o ingresa 0 para salir');
+        //masestudiantes = prompt('Vas a ingresar mas estudiantes? 0 para NO');
+        //if (isNaN(horas)) {
+          //  alert("El valor ingresado no es un numero")
+          //  horas = 0;
+        //} else {
+         //   const alumno = new solicitudEstudiante(name, sala, telefono, horas);
+         //   console.log(alumno);
+          //  console.log(alumno.imprimir());
+       // };
+    //};
 
-let sala = prompt('Edad del niño');
 
-let telefono= prompt('Ingrese telefono de contacto');
-
-let numero = prompt('Cuantas horas asistirá el niño al jardín? o ingresa 0 para salir');
-
-
-let multiplicacion = 300
-
-while (numero !=0){ // condicion que se cumple hasta que el numero ingresado sea cero
-    if (isNaN(numero)) {
-        alert("El valor ingresado no es un numero")
-        numero = 0
-    } else {
-        alert ('el precio por día es de: ' + numero*multiplicacion)
-        numero = prompt('Ingrese un numero, ingresa 0 para salir')
-    }
- 
-}
-
-let valorhora = 300;
-
-class solicitudEstudiante {
-    constructor (name, sala, telefono, horas) {
-        this.name = name;
-        this.sala = sala;
-        this.telefono = telefono;
-        this.horas = horas;
-    }
-
-    imprimir() {
-        alert(`El/La alumno/a ${this.name} de ${this.sala} años ha solicitado una vacante para dicha sala, con una cuota mensual de ${this.horas * valorhora}. Su acudiente puede ser contactado en el ${this.telefono}`);
-        return `El/La alumno/a ${this.name} de ${this.sala} años ha solicitado una vacante para dicha sala, con una cuota mensual de ${this.horas * valorhora}. Su acudiente puede ser contactado en el ${this.telefono}`
-    }
-}
-
-const solicitarDatos = () => {
-    let masestudiantes = 1;
-    while (masestudiantes !=0) { // condicion que se cumple hasta que el numero ingresado sea cero
-        let name = prompt('Cual es el nombre del niño/a?');
-        let sala = prompt('Edad del niño');
-        let telefono= prompt('Ingrese telefono de contacto');
-        let horas = prompt('Cuantas horas asistirá el niño al jardín? o ingresa 0 para salir');
-        masestudiantes = prompt('Vas a ingresar mas estudiantes? 0 para NO');
-        if (isNaN(horas)) {
-            alert("El valor ingresado no es un numero")
-            horas = 0;
-        } else {
-            const alumno = new solicitudEstudiante(name, sala, telefono, horas);
-            console.log(alumno);
-            console.log(alumno.imprimir());
-        };
-    };
-};
-
-solicitarDatos();
+//solicitarDatos();
 
 
 
@@ -69,14 +31,17 @@ function calculadorDeDias() {
     let cumple = new Date(document.getElementById("cumple").value);
     let edad = hoy.getFullYear() - cumple.getFullYear();
     let proximoCumple = new Date(hoy.getFullYear(), cumple.getMonth(), cumple.getDate());
-    if (hoy > proximoCumple.setFullYear(hoy.getFullYear() + 1));
-}
-let unDia = 24 * 60 * 60 * 1000;
-let faltanTantosDias = Math.ceil((proximoCumple.getTime() - hoy.getTime()) / (unDia));
-if (faltanTantosDias==364){
-    document.getElementById("resultado").innerText = "¡Te estas inscribiendo el dia de tu cumpleaños!";
-} else if (faltanTantosDias && edad < 150) {
-    document.getElementById("resultado").innerText = "En $(faltanTantosDias) pasaras a la proxima sala";
-} else {
-    document.getElementById("resultado").innerText = "Ingresa una fecha valida";
-}
+    if (hoy > proximoCumple) {
+        proximoCumple.setFullYear(hoy.getFullYear() + 1);
+    }
+        
+         let unDia = 24 * 60 * 60 * 1000;
+         let faltanTantosDias = Math.ceil((proximoCumple.getTime() - hoy.getTime()) / (unDia));
+         if (faltanTantosDias==364){
+           document.getElementById("resultado").innerText = "¡Te estas inscribiendo el dia de tu cumpleaños!";
+        } else if (faltanTantosDias && edad < 150){
+           document.getElementById("resultado").innerText = "En ${faltanTantosDias} días pasaras a la proxima sala";
+        } else {
+           document.getElementById("resultado").innerText = "Ingresa una fecha valida";
+        }; 
+    };
