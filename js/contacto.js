@@ -20,7 +20,6 @@
 //solicitarDatos();
 
 
-
 function CumpleañosySala () {
     let hoy = new date();
     document.getElementById("cumple").max = hoy.getFullYear() + "-" +
@@ -45,3 +44,14 @@ function calculadorDeDias() {
            document.getElementById("resultado").innerText = "Ingresa una fecha valida";
         } 
     };
+
+
+let formularioElement = document.getElementById("formulario");
+formularioElement.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    let formularioData = new FormData(formularioElement);
+    for(let pair of formularioData.entries()) {
+        console.log(pair[0]+ ', '+ pair[1]);
+      }
+    });

@@ -61,19 +61,19 @@
 </nav>
  
 <section class="formulario">
-<form action="guardar.php" method="POST">
+<form action="" method="POST" id="formulario">
     <fieldset class="container">
       <legend class="titulo_formulario">Nos contactaremos contigo</legend>
       <div class="clearfix">
         <img src="img/jugando.jpg" class="col-md-6 float-md-end mb-3 ms-md-3" alt="...">
       <div>
         <label class="text-formulario_leter" for="nombre de padre, madre o tutor">Nombre de padre, madre o tutor:</label>
-        <input class="text-formulario_leter" type="text" name="nombre de padre, madre o tutor" placeholder="nombre de padre madre o tutor" required></imput>
+        <input class="text-formulario_leter" type="text" id="nombre de padre, madre o tutor" name="nombre de padre, madre o tutor" placeholder="nombre de padre madre o tutor" required></imput>
       </div>
  
       <div>
-        <label class="text-formulario_leter" for="nombre del ninio">Nombre del niño/a:</label>
-        <input class="text-formulario_leter" type="text" name="nombre del ninio" placeholder="nombre del niño/a" required> </input>
+        <label class="text-formulario_leter" for="nombre del ninio" id="ninio" name="ninio">Nombre del niño/a:</label>
+        <input class="text-formulario_leter" type="text" id="nombre del ninio" name="nombre del ninio" placeholder="nombre del niño/a" required> </input>
       </div>
 
       <div>
@@ -121,15 +121,12 @@
           </div>
           <div>
             <label class="text-formulario_leter" for="telefono de contacto">telefono de contacto:</label>
-            <input class="text-formulario_leter" type="text" name="telefono de contacto" placeholder="telefono de contacto" required> </input>
+            <input class="text-formulario_leter" type="text" id="telefono de contacto" name="telefono de contacto" placeholder="telefono de contacto" required> </input>
           </div>
    
           <div>
-            <a href="" class="btn--limpiar" class="text-formulario_leter">Limpiar formulario</a>
-             
- 
-            <a href="" class="btn--enviar"class="text-formulario_leter">Enviar formulario</a>
-           
+            <button type="submit" id="btn-reserve" value="enviar" class="btn--enviar"class="text-formulario_leter">Enviar formulario</button>
+            
           </div>
        
         </fieldset>
@@ -174,4 +171,4 @@
 
  <script src="./js/contacto.js"></script>
 </body>
-</html>class="text-formulario_leter" type="text" name="fecha de nacimiento" placeholder="fecha de nacimiento del niño/a" required> </input>
+</html>
