@@ -39,9 +39,9 @@ function calculadorDeDias() {
          let faltanTantosDias = Math.ceil((proximoCumple.getTime() - hoy.getTime()) / (unDia));
          if (faltanTantosDias==364){
            document.getElementById("resultado").innerText = "¡Te estas inscribiendo el dia de tu cumpleaños!";
-        } else if (faltanTantosDias && edad < 150){
+        } else if (faltanTantosDias < 150 && edad < 150){
            document.getElementById("resultado").innerText = "En ${faltanTantosDias} días pasaras a la proxima sala";
         } else {
            document.getElementById("resultado").innerText = "Ingresa una fecha valida";
-        }; 
+        } 
     };
